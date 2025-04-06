@@ -1,6 +1,6 @@
 from collections import deque
 
-def BFS(G,s): #Brute Force Search
+def BFS(G,s):
     visited = [False] * len(G)
     parent = [None] * len(G)
     time = [float('inf')] * len(G)
@@ -16,7 +16,11 @@ def BFS(G,s): #Brute Force Search
                 time[v] = time[u] +1
                 q.append(v)
     return visited, parent, time
-#end
 
-G = [[1,3], [2], [], [4], []]
-print(BFS(G,0))
+# Example graph:
+
+G = [[1,4], [2], [3], [4], [1,3,5], []]
+visited, parent, time = BFS(G,0)
+print("Visited vertexes: ", visited)
+print("Parent vertexes: ", parent)
+print("Distance from start: ", time)
