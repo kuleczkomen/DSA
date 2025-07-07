@@ -1,1 +1,1 @@
-# This repository includes algorithms from my DSA university course
+## Algorithms from my Data Structures & Algorihms university course
