@@ -18,4 +18,4 @@ def BFS(G,s):
 
 
 G = [[1,2,3], [], [], [4], []]
-print(BFS(G,0))
+print(BFS(G,3))
