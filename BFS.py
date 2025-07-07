@@ -1,9 +1,8 @@
 from queue import deque
-INF = float('inf')
 
 def BFS(G,s):
     V = len(G)
-    d = [INF] * V
+    d = [-1] * V
     d[s] = 0
     q = deque()
     q.append(s)
@@ -11,7 +10,7 @@ def BFS(G,s):
     while q:
         u = q.popleft()
         for v in G[u]:
-            if d[v] == INF:
+            if d[v] == -1:
                 d[v] = d[u] + 1
                 q.append(v)
     
