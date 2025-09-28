@@ -2,21 +2,20 @@ def DFS(G,s):
     V = len(G)
     visited = [False] * V
     parent = [None] * V
-    d = [-1] * V
-    
+    time = [-1] * V
+    stack = [s]
     visited[s] = True
-    d[s] = 0
-
-    stack = []
-    stack.append(s)
+    time[s] = 0
 
     while stack:
         u = stack.pop()
-        for v in G[u]:
+        for v in reversed(G[u]):
             if not visited[v]:
                 visited[v] = True
                 parent[v] = u
-                d[v] = d[u] + 1
+                time[v] = time[u] + 1
                 stack.append(v)
-    
-    return d, parent, visited
+    return visited, parent, time
+
+G = [[1,3], [2], [], [4], []]
+print(DFS(G,0))
